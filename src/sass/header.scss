@@ -1,0 +1,26 @@
+.header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;;
+    img {
+        height: 50px;
+        object-fit: cover;
+    }
+    nav {
+        ul {
+            display: flex;
+            a {
+                text-decoration: none;
+                &.underline {
+                    text-decoration: underline;
+                }
+            }
+            li {
+                list-style: none;
+                color: black;
+                margin: 0 10px;
+            }
+        }
+    }
+}

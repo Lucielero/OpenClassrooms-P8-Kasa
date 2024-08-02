@@ -1,0 +1,12 @@
+@import "sass/header.scss";
+@import "sass/home.scss";
+@import "sass/utils/variables.scss";
+@import "sass/thumb.scss";
+
+//GENERAL
+body {
+    font-family: $main-font;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
