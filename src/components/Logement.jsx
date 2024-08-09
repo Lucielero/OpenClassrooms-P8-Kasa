@@ -11,17 +11,16 @@ const Logement = () => {
   const pictures = logement.pictures;
   return (
     <div>
-      <p>Voici le logement avec l'id {id}</p>
-      <p>Voici le titre du logement {logement.title}</p>
-      <p>Voici la description du logement {logement.description}</p>
       <div className="pictures">
         {pictures.map((picture,index)=> {
           return (
-            <img src={picture} alt={picture.title} key={picture,index}/>
+            <img src={picture} alt={picture.title} key={(picture,index)}/>
           )
-          })
-        }  
+        })}  
       </div>
+      <p>{logement.title}</p>
+      
+      <p>Voici la description du logement {logement.description}</p>
     </div>
   );
 };

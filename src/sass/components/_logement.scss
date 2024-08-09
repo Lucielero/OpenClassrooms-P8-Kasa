@@ -1,0 +1,10 @@
+@import "../utils/variables.scss";
+
+.pictures {
+    img {
+        width: 1240px;
+        height: 415px;
+        object-fit: cover;
+        border-radius: $main-bradius;
+    }
+}
