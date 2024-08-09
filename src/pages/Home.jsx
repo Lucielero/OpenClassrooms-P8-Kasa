@@ -1,4 +1,4 @@
-import Cards from "../components/Thumb";
+import Cards from "../components/Card";
 import logements from "../data/logements.json";
 
 const Home = () => {

@@ -1,0 +1,12 @@
+@import "../utils/variables.scss";
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: $gallery-bg;
+    border-radius: $main-bradius;
+    padding: 50px;
+}

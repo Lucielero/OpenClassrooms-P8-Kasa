@@ -1,9 +1,11 @@
 
 const About = () => {
     return (
-      <div>
-        <h1>Page A Propos</h1>
-      </div>
+      <div className="about">
+        <div className="banner">
+          <img src="/images/about_hero_background.jpg" alt="Image montagnes"></img>
+        </div>
+      </div>  
     );
   };
   

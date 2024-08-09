@@ -1,12 +1,15 @@
-@import "sass/header.scss";
+@import "sass/layout/header.scss";
+@import "sass/layout/footer.scss";
 @import "sass/home.scss";
+@import "sass/about.scss";
 @import "sass/utils/variables.scss";
-@import "sass/thumb.scss";
+@import "sass/utils/mixins.scss";
+@import "sass/components/card.scss";
+@import "sass/components/banner.scss";
+@import "sass/components/gallery.scss";
 
 //GENERAL
 body {
     font-family: $main-font;
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
+    
 }

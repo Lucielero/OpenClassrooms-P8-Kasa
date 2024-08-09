@@ -1,0 +1,15 @@
+@import "../utils/variables.scss";
+
+.footer {
+    background-color: $footer-bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 10px 0;
+    gap: 10px;
+    p {
+        color: $white;
+        font-size: $text-size;
+    }
+} 
