@@ -8,9 +8,18 @@ const findLogementID =(id)=>{
 const Logement = () => {
   const{id} = useParams();
   const logement = findLogementID(id);
-  const pictures = logement.pictures;
+
+
+
+  if (!logement) {
+    return <p>Logement introuvable</p>;
+  }
+
+  const { pictures, title, description, host, rating, location, equipments, tags } = logement;
+
   return (
-    <div>
+    <div className="logement-container">
+      {/*Carousel à faire*/}
       <div className="pictures">
         {pictures.map((picture,index)=> {
           return (
@@ -18,9 +27,38 @@ const Logement = () => {
           )
         })}  
       </div>
-      <p>{logement.title}</p>
-      
-      <p>Voici la description du logement {logement.description}</p>
+
+
+      {/*Infos*/}
+      <div className="info-container">
+
+        <div className="heading">
+          <div className="title-location">
+            <h1>{title}</h1>
+            <p>{location}</p>
+          </div>
+          <div className="host-info">
+          <img src={host.picture} alt={`Photo de ${host.name}`} className="host-picture" />
+          <p>{host.name}</p>
+          </div>
+        </div>
+
+        <div className="tags-rating">
+          <div className="tags">
+            {tags.map((tag, index) => (
+              <span key={index} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="rating">
+            
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };
