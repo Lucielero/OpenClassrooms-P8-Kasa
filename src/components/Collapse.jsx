@@ -11,16 +11,16 @@ const Collapse = ({ title, content }) => {
 
     return (
         <div className="collapse">
-            <div className="collapse-header" onClick={toggleCollapse}>
-                <h2 className="collapse-title">{title}</h2>
+            <div className="collapse__header" onClick={toggleCollapse}>
+                <h2 className="collapse__title">{title}</h2>
                 <img
                     src={isOpen ? ArrowUp : ArrowDown}
                     alt={isOpen ? "Flèche vers le haut" : "Flèche vers le bas"}
-                    className="collapse-arrow"
+                    className="collapse__arrow"
                 />
             </div>
             {isOpen && (
-                <div className="collapse-content">
+                <div className="collapse__content">
                     {content}
                 </div>
             )}

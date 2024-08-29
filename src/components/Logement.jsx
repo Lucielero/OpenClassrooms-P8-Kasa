@@ -2,61 +2,31 @@ import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import logements from "../data/logements.json";
 import Collapse from "./Collapse";
+import Slideshow from "./Slideshow";
 
 //Images 
-import ArrowRight from "/images/right_arrow.png";
-import ArrowLeft from "/images/left_arrow.png";
 import starActive from "/images/star_active.png";
 import starInactive from "/images/star_inactive.png";
-import ArrowUp from "/images/arrow_up.png";
-import ArrowDown from "/images/arrow_down.png";
 
 const findLogementID =(id)=> logements.find((logement)=>logement.id === id);
 
 const Logement = () => {
   const{id} = useParams();
   const logement = findLogementID(id);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   
   if (!logement) {
     return <p>Logement introuvable</p>;
   }
+
   const { pictures, title, description, host, rating, location, equipments, tags } = logement;
-  const PrevImgSlideshow = () => {
-    setCurrentIndex(prevIndex => (prevIndex === 0 ? pictures.length - 1 : prevIndex - 1));
-  };
-  const NextImgSlideshow = () => {
-    setCurrentIndex(prevIndex => (prevIndex === pictures.length - 1 ? 0 : prevIndex + 1));
-  };
 
   return (
     <div className="logement">
-      {/*Carousel à faire*/}
-      {pictures.length > 1 && (
-        <div className="logement__carousel">
-          <button className="arrow left-arrow" onClick={PrevImgSlideshow}>
-            <img src={ArrowLeft} alt="Flèche gauche" />
-          </button>
-          <div className="slide">
-            <img src={pictures[currentIndex]} alt={"Image $ {currentIndex + 1}"} />
-          </div>
-          <button className="arrow right-arrow" onClick={NextImgSlideshow}>
-            <img src={ArrowRight} alt="Flèche droite" />
-          </button>
-          <div className="pagination">
-            {pictures.map((_, index) => (
-              <span 
-                key={index}
-                className={`dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-      {/*Infos*/}
+      {/*Slideshow*/}
+      <div className="logement__slideshow">
+        <Slideshow images={pictures} />
+      </div>
+      {/*Infos Logement*/}
       <div className="logement__info">
         <div className="logement__header">
           <div className="logement__title-location">
@@ -64,11 +34,10 @@ const Logement = () => {
             <p className="logement__location">{location}</p>
           </div>
           <div className="logement__host">
-          <p className="logement__host-name">{host.name}</p>
-          <img src={host.picture} alt={`Photo de ${host.name}`} className="logement__host-picture" />
+            <p className="logement__host-name">{host.name}</p>
+            <img src={host.picture} alt={`Photo de ${host.name}`} className="logement__host-picture" />
           </div>
         </div>
-        {/*Note*/}
         <div className="logement__details">
           <div className="logement__tags">
             {tags.map((tag, index) => (
@@ -88,6 +57,7 @@ const Logement = () => {
             ))}
           </div>
         </div>
+        {/*Collapse*/}
         <div className="collapse-container">
           <Collapse 
             title="Description"
