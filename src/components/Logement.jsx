@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import logements from "../data/logements.json";
+import Collapse from "./Collapse";
 
 //Images 
 import ArrowRight from "/images/right_arrow.png";
@@ -15,11 +16,10 @@ const findLogementID =(id)=> logements.find((logement)=>logement.id === id);
 const Logement = () => {
   const{id} = useParams();
   const logement = findLogementID(id);
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const toggleDropdown = (section) => {
-    setOpenDropdown(prevSection => (prevSection === section ? null : section));
-  };  
+
+  
   if (!logement) {
     return <p>Logement introuvable</p>;
   }
@@ -88,41 +88,23 @@ const Logement = () => {
             ))}
           </div>
         </div>
-        <div className="dropdown-container">
-          {/*Dropdown Description*/}
-          <div className="dropdown" onClick={() => toggleDropdown("description")}>
-            <h2 className="dropdown_title">Description</h2>
-            <img 
-              src={openDropdown === "description" ? ArrowUp : ArrowDown}
-              alt={openDropdown === "description" ? "Flèche vers le haut" : "Flèche vers le bas"}
-              className="dropdown_arrow"
-            />
-            {openDropdown === "description" && (
-              <div className="dropdown_content">
-                <p>{description}</p>
-              </div>
-              )}
-          </div>
-          {/*Dropdown Equipements*/}
-          <div className="dropdown" onClick={() => toggleDropdown("equipments")}>
-            <h2 className="dropdown_title">Équipements</h2>
-            <img 
-              src={openDropdown === "equipments" ? ArrowUp : ArrowDown}
-              alt={openDropdown === "equipments" ? "Flèche vers le haut" : "Flèche vers le bas"}
-              className="dropdown_arrow"
-            />
-            {openDropdown === "equipments" && (
-              <div className="dropdown_content">
-                <ul>
-                  {equipments.map((equipments, index) => (
-                    <li key={index}>{equipments}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-          </div>
+        <div className="collapse-container">
+          <Collapse 
+            title="Description"
+            content={<p>{description}</p>}
+          />
+          <Collapse 
+            title="Équipements"
+            content={
+              <ul>
+                {equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            }
+          />
         </div>
+      </div>
     </div>
   );
 };
