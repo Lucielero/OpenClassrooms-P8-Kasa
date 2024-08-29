@@ -15,29 +15,21 @@ const findLogementID =(id)=> logements.find((logement)=>logement.id === id);
 const Logement = () => {
   const{id} = useParams();
   const logement = findLogementID(id);
-
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
-
-  const toggleDescription = () => setIsDescriptionOpen(prev => !prev);
-  const toggleEquipments = () => setIsEquipmentsOpen(prev => !prev);
-
-
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const toggleDropdown = (section) => {
+    setOpenDropdown(prevSection => (prevSection === section ? null : section));
+  };  
   if (!logement) {
     return <p>Logement introuvable</p>;
   }
-
   const { pictures, title, description, host, rating, location, equipments, tags } = logement;
-
   const PrevImgSlideshow = () => {
     setCurrentIndex(prevIndex => (prevIndex === 0 ? pictures.length - 1 : prevIndex - 1));
   };
-
   const NextImgSlideshow = () => {
     setCurrentIndex(prevIndex => (prevIndex === pictures.length - 1 ? 0 : prevIndex + 1));
   };
-
 
   return (
     <div className="logement-container">
@@ -64,9 +56,6 @@ const Logement = () => {
           </div>
         </div>
       )}
-
-
-
       {/*Infos*/}
       <div className="info-container">
         <div className="heading">
@@ -102,43 +91,39 @@ const Logement = () => {
         </div>
         <div className="dropdown-container">
           {/*Dropdown Description*/}
-          <div className="dropdown_description" onClick={toggleDescription}>
-            <h2>Description</h2>
+          <div className="dropdown" onClick={() => toggleDropdown("description")}>
+            <h2 className="dropdown_title">Description</h2>
             <img 
-              src={isDescriptionOpen ? ArrowUp : ArrowDown}
-              alt={isDescriptionOpen ? "Flèche vers le haut" : "Flèche vers le bas"}
+              src={openDropdown === "description" ? ArrowUp : ArrowDown}
+              alt={openDropdown === "description" ? "Flèche vers le haut" : "Flèche vers le bas"}
               className="dropdown_arrow"
             />
-            <div>
-              {isDescriptionOpen && (
-                <div className="dropdown_content">
-                  <p>{description}</p>
-                </div>
+            {openDropdown === "description" && (
+              <div className="dropdown_content">
+                <p>{description}</p>
+              </div>
               )}
-            </div>
           </div>
           {/*Dropdown Equipements*/}
-          <div className="dropdown_equipments" onClick={toggleEquipments}>
-            <h2>Équipements</h2>
+          <div className="dropdown" onClick={() => toggleDropdown("equipments")}>
+            <h2 className="dropdown_title">Équipements</h2>
             <img 
-              src={isEquipmentsOpen ? ArrowUp : ArrowDown}
-              alt={isEquipmentsOpen ? "Flèche vers le haut" : "Flèche vers le bas"}
+              src={openDropdown === "equipments" ? ArrowUp : ArrowDown}
+              alt={openDropdown === "equipments" ? "Flèche vers le haut" : "Flèche vers le bas"}
               className="dropdown_arrow"
             />
-            <div>
-              {isEquipmentsOpen && (
-                <div className="dropdown_content">
-                  <ul>
-                    {equipments.map((equipments, index) => (
-                      <li key={index}>{equipments}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            {openDropdown === "equipments" && (
+              <div className="dropdown_content">
+                <ul>
+                  {equipments.map((equipments, index) => (
+                    <li key={index}>{equipments}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

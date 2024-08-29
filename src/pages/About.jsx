@@ -19,10 +19,10 @@ const About = () => {
         <div className="banner">
           <img src="/images/about_hero_background.jpg" alt="Image montagnes"/>
         </div>
-        <div className="dropdown-container">
+        <div className="dropdown">
           {/*Dropdown*/}
-          <div className="dropdown" onClick={() => toggleDropdown("fiabilite")}>
-            <h2>Fiabilité</h2>
+          <div className="dropdown_container" onClick={() => toggleDropdown("fiabilite")}>
+            <h2 className="dropdown_title">Fiabilité</h2>
             <img 
               src={openDropdown === "fiabilite" ? ArrowUp : ArrowDown}
               alt={openDropdown === "fiabilite" ? "Flèche vers le haut" : "Flèche vers le bas"}
@@ -36,8 +36,8 @@ const About = () => {
               )}
             </div>
           </div>
-          <div className="dropdown" onClick={() => toggleDropdown("respect")}>
-            <h2>Respect</h2>
+          <div className="dropdown_container" onClick={() => toggleDropdown("respect")}>
+            <h2 className="dropdown_title">Respect</h2>
             <img 
               src={openDropdown === "respect" ? ArrowUp : ArrowDown}
               alt={openDropdown === "respect" ? "Flèche vers le haut" : "Flèche vers le bas"}
@@ -51,8 +51,8 @@ const About = () => {
               )}
             </div>
           </div>
-          <div className="dropdown" onClick={() => toggleDropdown("service")}>
-            <h2>Service</h2>
+          <div className="dropdown_container" onClick={() => toggleDropdown("service")}>
+            <h2 className="dropdown_title">Service</h2>
             <img 
               src={openDropdown === "service" ? ArrowUp : ArrowDown}
               alt={openDropdown === "service" ? "Flèche vers le haut" : "Flèche vers le bas"}
@@ -66,8 +66,8 @@ const About = () => {
               )}
             </div>
           </div>
-          <div className="dropdown" onClick={() => toggleDropdown("securite")}>
-            <h2>Sécurité</h2>
+          <div className="dropdown_container" onClick={() => toggleDropdown("securite")}>
+            <h2 className="dropdown_title">Sécurité</h2>
             <img 
               src={openDropdown === "securite" ? ArrowUp : ArrowDown}
               alt={openDropdown === "securite" ? "Flèche vers le haut" : "Flèche vers le bas"}

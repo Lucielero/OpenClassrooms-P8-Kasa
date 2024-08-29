@@ -1,0 +1,10 @@
+@import "../utils/variables.scss";
+
+.dropdown {
+    h2 {
+        background-color: $red;
+        color: $white;
+        padding: 15px;
+        border-radius: 5px;
+    }
+}
