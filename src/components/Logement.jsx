@@ -32,10 +32,10 @@ const Logement = () => {
   };
 
   return (
-    <div className="logement-container">
+    <div className="logement">
       {/*Carousel à faire*/}
       {pictures.length > 1 && (
-        <div className="slideshow">
+        <div className="logement__carousel">
           <button className="arrow left-arrow" onClick={PrevImgSlideshow}>
             <img src={ArrowLeft} alt="Flèche gauche" />
           </button>
@@ -57,34 +57,33 @@ const Logement = () => {
         </div>
       )}
       {/*Infos*/}
-      <div className="info-container">
-        <div className="heading">
-          {/*Titre et Localisation*/}
-          <div className="title-location">
-            <h1>{title}</h1>
-            <p>{location}</p>
+      <div className="logement__info">
+        <div className="logement__header">
+          <div className="logement__title-location">
+            <h1 className="logement__title">{title}</h1>
+            <p className="logement__location">{location}</p>
           </div>
-          <div className="host-info">
-          <p>{host.name}</p>
-          <img src={host.picture} alt={`Photo de ${host.name}`} className="host-picture" />
+          <div className="logement__host">
+          <p className="logement__host-name">{host.name}</p>
+          <img src={host.picture} alt={`Photo de ${host.name}`} className="logement__host-picture" />
           </div>
         </div>
         {/*Note*/}
-        <div className="tags-rating">
-          <div className="tags">
+        <div className="logement__details">
+          <div className="logement__tags">
             {tags.map((tag, index) => (
-              <span key={index} className="tag">
+              <span key={index} className="logement__tag">
                 {tag}
               </span>
             ))}
           </div>
-          <div className="rating">
+          <div className="logement__rating">
             {[...Array(5)].map((_, index) => (
               <img 
                 key={index}
                 src={index < rating ? starActive : starInactive}
                 alt={index < rating ? "Étoile pleine" : "Étoile vide"}
-                className="star"
+                className="logement__star"
               />
             ))}
           </div>

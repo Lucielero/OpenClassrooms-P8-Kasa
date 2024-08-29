@@ -1,10 +1,68 @@
 @import "../utils/variables.scss";
 
-.pictures {
-    img {
-        width: 1240px;
-        height: 415px;
-        object-fit: cover;
-        border-radius: $main-bradius;
+.logement {
+    width: 90%;
+    margin: 0 auto;
+    &__carousel {
+
     }
+    &__info {
+
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &__title-location {
+        max-width: 60%;
+        h1 {
+            color: $red;
+            font-weight: $font-weight-medium;
+        }
+        p {
+            font-weight: $font-weight-bold;
+        }
+    }
+    &__host {
+        display: flex;
+        align-items: center;
+        &-name {
+            color: $red;
+        }
+        &-picture {
+            width: 64px;
+            height: 64px;
+            border-radius: 50px;
+        }
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    &__tags {
+        display: flex;
+        gap: 10px;
+
+    }
+    &__tag {
+        background-color: $red;
+        border-radius: 15px;
+        width: 115px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+    }
+    &__rating {
+        display: flex;
+        gap: 10px;
+    }
+
 }
+
