@@ -23,7 +23,7 @@ const Slideshow = ({ images }) => {
                 </button>
             )}
             <div className="slideshow__slide">
-                <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="slideshow__image" />
+                <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="slideshow__image"  />
             </div>
             {totalImages > 1 && (
                 <button className="slideshow__arrow slideshow__arrow-right" onClick={NextImgSlideshow}>

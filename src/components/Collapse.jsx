@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ArrowUp from "/images/arrow_up.png";
-import ArrowDown from "/images/arrow_down.png";
+
 
 const Collapse = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +11,16 @@ const Collapse = ({ title, content }) => {
 
     return (
         <div className="collapse">
-            <div className="collapse__header" onClick={toggleCollapse}>
+            <div className="collapse__toggle-bar" onClick={toggleCollapse}>
                 <h2 className="collapse__title">{title}</h2>
                 <img
-                    src={isOpen ? ArrowUp : ArrowDown}
-                    alt={isOpen ? "Flèche vers le haut" : "Flèche vers le bas"}
-                    className="collapse__arrow"
+                    src={ArrowUp}
+                    alt={isOpen ? "Flèche vers le bas" : "Flèche vers le haut"}
+                    className={`collapse__arrow ${isOpen ? 'open' : ''}`}
                 />
             </div>
             {isOpen && (
-                <div className="collapse__content">
+                <div className={`collapse__content ${isOpen ? 'open' : ''}`}>
                     {content}
                 </div>
             )}

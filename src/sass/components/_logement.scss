@@ -3,10 +3,10 @@
 .logement {
     width: 90%;
     margin: 0 auto;
-    &__carousel {
 
-    }
-    &__info {
+    &__slideshow {
+        margin-bottom: 20px;
+        width: 100%;
 
     }
     &__header {
@@ -37,7 +37,6 @@
             border-radius: 50px;
         }
     }
-
     &__details {
         display: flex;
         justify-content: space-between;
@@ -63,6 +62,15 @@
         display: flex;
         gap: 10px;
     }
+    .collapse-container {
+        display: flex;
+        gap: 5%;
+        margin-bottom: 50px;
+        .collapse {
+            flex: 1;
+            min-width: 45%;
 
+        }
+    }
 }
 

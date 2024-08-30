@@ -20,6 +20,8 @@ const Logement = () => {
 
   const { pictures, title, description, host, rating, location, equipments, tags } = logement;
 
+  const [firstName, lastName] = host.name.split(" ");
+
   return (
     <div className="logement">
       {/*Slideshow*/}
@@ -34,8 +36,13 @@ const Logement = () => {
             <p className="logement__location">{location}</p>
           </div>
           <div className="logement__host">
-            <p className="logement__host-name">{host.name}</p>
-            <img src={host.picture} alt={`Photo de ${host.name}`} className="logement__host-picture" />
+            <div className="logement__host-name">
+              <p className="logement__host-first-name">{firstName}</p>
+              <p className="logement__host-last-name">{lastName}</p>
+            </div>
+            <div>
+              <img src={host.picture} alt={`Photo de ${host.name}`} className="logement__host-picture" />
+            </div>
           </div>
         </div>
         <div className="logement__details">

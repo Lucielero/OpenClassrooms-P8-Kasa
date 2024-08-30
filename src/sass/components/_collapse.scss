@@ -1,13 +1,39 @@
 @import "../utils/variables.scss";
 
 .collapse {
-    h2 {
+    &__toggle-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
         background-color: $red;
         color: $white;
         padding: 15px;
         border-radius: 5px;
     }
+    &__title {
+        margin: 0;
+    }
+    &__arrow {
+        width: 24px;
+        height: 14px;
+        transition: transform 0.5s ease;
+    }
+    &__arrow.open {
+        transform: rotate(-180deg);
+    }
     &__content {
         background-color: $grey;
+        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        padding: 0 20px;
+        font-weight: $font-weight-medium;
+    }
+    &__content.open {
+
+    }
+    &__content ul {
+        list-style-type: none;
+        padding: 0;
     }
 }
