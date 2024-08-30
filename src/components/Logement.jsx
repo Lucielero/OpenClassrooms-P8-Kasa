@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {useParams} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {useParams, useNavigate } from "react-router-dom";
 import logements from "../data/logements.json";
 import Collapse from "./Collapse";
 import Slideshow from "./Slideshow";
@@ -12,10 +12,20 @@ const findLogementID =(id)=> logements.find((logement)=>logement.id === id);
 
 const Logement = () => {
   const{id} = useParams();
-  const logement = findLogementID(id);
+  const navigate = useNavigate();
+  const [logement, setLogement] = useState(null);
   
+  useEffect(() => {
+    const fetchedLogement = findLogementID(id);
+    if(!fetchedLogement) {
+      navigate("/404");
+    } else {
+      setLogement(fetchedLogement);
+    }
+  }, [id, navigate]);
+
   if (!logement) {
-    return <p>Logement introuvable</p>;
+    return null;
   }
 
   const { pictures, title, description, host, rating, location, equipments, tags } = logement;
