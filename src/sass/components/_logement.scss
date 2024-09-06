@@ -3,26 +3,32 @@
 .logement {
     width: 90%;
     margin: 0 auto;
-
     &__slideshow {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         width: 100%;
 
+    }
+    &__info {
+        width: 98%;
+        margin: 0 auto;
     }
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin: 30px 0 10px 0;
     }
     &__title-location {
         max-width: 60%;
         h1 {
             color: $red;
             font-weight: $font-weight-medium;
+            font-size: $title-size;
+            margin: 0 0 -5px 0;
         }
         p {
-            font-weight: $font-weight-bold;
+            font-weight: 600;
+            font-size: $text-size;
         }
     }
     &__host {
@@ -30,29 +36,39 @@
         align-items: center;
         &-name {
             color: $red;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+            margin-right: 10px;
+            p {
+                margin:0;
+            }
         }
         &-picture {
             width: 64px;
             height: 64px;
-            border-radius: 50px;
+            border-radius: 50%;
         }
     }
     &__details {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     &__tags {
         display: flex;
         gap: 10px;
-
+        font-size: 14px;
+        font-weight: $font-weight-bold;
     }
     &__tag {
         background-color: $red;
         border-radius: 15px;
         width: 115px;
         height: 25px;
+        padding: 3px 15px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -73,4 +89,3 @@
         }
     }
 }
-
