@@ -1,13 +1,15 @@
 @import "../utils/variables.scss";
 
+.gallery-container {
+    background-color: $grey;
+    border-radius: $main-bradius;
+    margin-top: 30px;
+}
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 60px;
-    background-color: $grey;
-    border-radius: $main-bradius;
-    padding: 60px;
-    margin-top: 30px;
+    padding: 60px 60px 60px 75px;
 }

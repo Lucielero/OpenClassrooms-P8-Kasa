@@ -8,9 +8,12 @@ const Home = () => {
             <img src="/images/home_hero_background.jpg" alt="Image d'un océan"/>
             <h1>Chez vous, partout et ailleurs</h1>
           </div>
-          <div className="gallery">
-            <Cards logements={logements} />
+          <div className="gallery-container">
+            <div className="gallery">
+              <Cards logements={logements} />
           </div>
+          </div>
+          
       </div>
     );
   };

@@ -1,3 +1,5 @@
+@import "../utils/variables.scss";
+
 .header { 
     display: flex;
     justify-content: space-between;
@@ -12,8 +14,10 @@
             display: flex;
             a {
                 text-decoration: none;
+                font-weight: $font-weight-medium;
                 &.underline {
                     text-decoration: underline;
+                    text-underline-offset: 2px;
                 }
             }
             li {

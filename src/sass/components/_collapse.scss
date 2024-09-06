@@ -26,8 +26,9 @@
         background-color: $grey;
         border-radius: 0 0 5px 5px;
         overflow: hidden;
-        padding: 0 20px;
+        padding: 30px;
         font-weight: $font-weight-medium;
+        font-size: $text-size;
     }
     &__content.open {
 

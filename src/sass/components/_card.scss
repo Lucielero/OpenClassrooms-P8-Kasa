@@ -1,6 +1,6 @@
 .card {
-    width: 460px;
-    height: 460px;
+    width: 480px;
+    height: 480px;
     border-radius: 10px; 
     cursor: pointer;
     position: relative;
@@ -9,7 +9,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
-        filter: brightness(90%);
+        filter: brightness(80%);
     }
     h3 {
         position: absolute;

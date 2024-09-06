@@ -1,34 +1,36 @@
+@import "./utils/variables.scss";
 
 .not-found {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh; 
-
-    text-align: center;
+    height: 80vh; 
     &__content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 20px; 
         padding: 20px;
+        margin-bottom: 50px;
     }
-
     &__code {
         font-size: 288px;
         margin: 0; 
+        color: $red;
     }
-
     &__message {
         font-size: 24px; 
         margin: 0; 
+        color: $red;
+        font-weight: $font-weight-medium;
     }
-
     &__link {
         font-size: 18px; 
-
         text-decoration: underline;
         cursor: pointer; 
+        color: black;
+        font-weight: $font-weight-medium;
+        &:visited {
+            color:inherit;
+        }
     }
 }

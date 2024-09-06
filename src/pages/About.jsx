@@ -6,10 +6,10 @@ import ArrowDown from "/images/arrow_down.png";
 const About = () => {
   return (
     <div className="about">
-      <div className="banner">
+      <div className="about__banner banner">
         <img src="/images/about_hero_background.jpg" alt="Images de montagnes" />
       </div>
-      <div className="collapse-container">
+      <div className="about__collapse__container">
         <Collapse
           title="Fiabilité"
           content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
