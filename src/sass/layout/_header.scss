@@ -28,3 +28,24 @@
         }
     }
 }
+
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .header {
+        margin: 20px 20px; 
+
+        img {
+            height: 40px;
+        }
+        nav {
+            ul {
+                a {
+                    font-size: 12px; 
+                }
+                li {
+                    margin: 0 5px; 
+                }
+            }
+        }
+    }
+}

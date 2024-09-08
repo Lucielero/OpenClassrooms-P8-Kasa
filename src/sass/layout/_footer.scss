@@ -13,3 +13,13 @@
         font-size: $text-size;
     }
 } 
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0; 
+        p {
+            font-size: 12px; 
+            
+        }
+    }
+}

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Collapse from "../components/Collapse";
-import ArrowUp from "/images/arrow_up.png";
-import ArrowDown from "/images/arrow_down.png";
+import Banner from "../components/Banner";
+
+
 
 const About = () => {
   return (
     <div className="about">
-      <div className="about__banner banner">
-        <img src="/images/about_hero_background.jpg" alt="Images de montagnes" />
-      </div>
+      <Banner image="/images/about_hero_background.jpg" />
       <div className="about__collapse__container">
         <Collapse
           title="Fiabilité"
