@@ -13,3 +13,14 @@
     gap: 60px;
     padding: 60px 60px 60px 75px;
 }
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .gallery-container {
+        background-color: $white;
+        margin-top: 10px;
+        .gallery {
+            padding: 5px;
+            gap: 20px;
+        }
+    }
+}

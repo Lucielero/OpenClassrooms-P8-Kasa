@@ -23,9 +23,14 @@
         text-shadow: $txt-shadow;
     }
 }
-
 // Responsive pour mobiles
 @media (max-width: 768px) {
-    
-    
+    .banner {
+        height: 180px;
+        justify-content: flex-start;
+        h1 {
+            font-size: $subtitle-size;
+            padding: 30px;
+        }
+    }
 }

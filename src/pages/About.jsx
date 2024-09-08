@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Collapse from "../components/Collapse";
 import Banner from "../components/Banner";
 
-
-
 const About = () => {
   return (
     <div className="about">

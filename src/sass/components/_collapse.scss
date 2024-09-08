@@ -30,11 +30,19 @@
         font-weight: $font-weight-medium;
         font-size: $text-size;
     }
-    &__content.open {
-
-    }
     &__content ul {
         list-style-type: none;
         padding: 0;
+    }
+}
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .collapse {
+        &__title {
+            font-size: 18px;
+        }
+        &__content {
+            font-size: 14px;
+        }
     }
 }

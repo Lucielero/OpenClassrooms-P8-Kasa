@@ -34,3 +34,22 @@
         }
     }
 }
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .not-found {
+        height: 70vh;
+        &__content {
+            margin-top: 40px;
+        }
+        &__code {
+            font-size: 96px;
+        }
+        &__message {
+            font-size: 18px;
+            text-align: center;
+        }
+        &__link {
+            font-size: 14px;
+        }
+    }
+}

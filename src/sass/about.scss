@@ -3,16 +3,23 @@
 .about {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     margin: 0 80px 50px 80px;
-    &__banner {
-        margin-bottom: 20px;
-    }
     &__collapse__container {
         width: 90%;
         margin: 0 auto;
         gap: 40px;
         display: flex;
         flex-direction: column;
+    }
+}
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .about {
+        margin: 30px 20px;
+        &__collapse__container {
+            gap: 25px;
+            width: 100%;
+        }
     }
 }

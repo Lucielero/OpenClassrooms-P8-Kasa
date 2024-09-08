@@ -6,7 +6,6 @@
     &__slideshow {
         margin-bottom: 10px;
         width: 100%;
-
     }
     &__info {
         width: 98%;
@@ -86,6 +85,17 @@
             flex: 1;
             min-width: 45%;
 
+        }
+    }
+}
+// Responsive pour mobiles
+@media (max-width: 768px) {
+    .logement {
+        &__header {
+            flex-direction: column;
+        }
+        &__title-location {
+            max-width: 100%;
         }
     }
 }
